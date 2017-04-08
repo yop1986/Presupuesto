@@ -39,7 +39,46 @@ BEGIN
         SELECT '¡YA EXISTE OTRA CAUSA CON EL NOMBRE INGRESADO!' INTO out_errormsg;
         LEAVE `sp_causa_actualiza`;
     END IF;
-    
-    IF (SELECT COUNT(id) FROM cl_causas AS c1 INNER JOIN cl_causas AS c2 
-        ON c1.id = c2.causa_id AND isnull(c1.causa_id))
+
+
+    SELECT @w_hijo_id := c2.id, @w_hijo_ingreso := c2.ingreso #c1.nombre AS CAUSA, c2.nombre AS HIJO
+    FROM cl_causas AS c1 INNER JOIN cl_causas AS c2 ON c1.id = c2.causa_id AND c1.id = in_id LIMIT 1;
+
+    IF ISNULL(in_causa_padre) THEN
+        IF (@w_hijo_id) THEN
+            IF @w_hijo_ingreso = in_ingreso THEN
+                UPDATE cl_causas 
+                SET nombre = in_nombre, ingreso = in_ingreso, causa_id = NULL 
+                WHERE id = in_id;
+            ELSE
+                SELECT 'NO COINCIDEN LOS TIPOS DE CUENTA' INTO out_errormsg;
+                LEAVE `sp_causa_actualiza`;
+            END IF;
+        ELSE
+            # no tiene hijo y se asigna un padre null, solo se actualiza
+            UPDATE cl_causas 
+            SET nombre = in_nombre, ingreso = in_ingreso, causa_id = NULL 
+            WHERE id = in_id;
+        END IF;
+    ELSE
+        IF (@w_hijo_id) THEN
+            IF (SELECT ingreso FROM cl_causas WHERE id = in_causa_padre) = @w_hijo_ingreso AND in_ingreso = @w_hijo_ingreso THEN
+                UPDATE cl_causas 
+                SET nombre = in_nombre, ingreso = in_ingreso, causa_id = in_causa_padre 
+                WHERE id = in_id;
+            ELSE
+                SELECT 'NO COINCIDEN LOS TIPOS DE CUENTA' INTO out_errormsg;
+                LEAVE `sp_causa_actualiza`;
+            END IF;
+        ELSE
+            IF (SELECT ingreso FROM cl_causas WHERE id = in_causa_padre) = in_ingreso THEN
+                UPDATE cl_causas 
+                SET nombre = in_nombre, ingreso = in_ingreso, causa_id = in_causa_padre 
+                WHERE id = in_id;
+            ELSE
+                SELECT 'NO COINCIDEN LOS TIPOS DE CUENTA' INTO out_errormsg;
+                LEAVE `sp_causa_actualiza`;
+            END IF;
+        END IF;
+    END IF; 
 END;
