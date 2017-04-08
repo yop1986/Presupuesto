@@ -21,7 +21,7 @@ CREATE PROCEDURE sp_causa_ingreso (
 */
 `sp_causa_ingreso`:
 BEGIN
-    # @w_ingreso    --causa padre activo/pasivo
+    SET @w_ingreso = 0;
 
     IF (SELECT 1 FROM cl_causas WHERE nombre LIKE in_nombre AND usuario_id = in_usuario) = 1 THEN
         SELECT '¡CAUSA YA REGISTRADA!' INTO out_errormsg;

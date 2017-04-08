@@ -22,8 +22,9 @@ CREATE PROCEDURE sp_causa_actualiza (
 */
 `sp_causa_actualiza`:
 BEGIN
-    # @w_ingreso_padre   --causa padre activo/pasivo
-    # @w_ingreso_hijo    --causa hijo activo/pasivo
+    SET @w_hijo_id = 0,
+        @w_hijo_ingreso = 0;
+
     IF (SELECT COUNT(id) FROM cl_causas WHERE id = in_id AND usuario_id = in_usuario) = 0 THEN 
         SELECT '¡SOLO EL USUARIO PUEDE EDITAR SUS CAUSAS!' INTO out_errormsg;
         LEAVE `sp_causa_actualiza`;
