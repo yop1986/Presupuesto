@@ -18,8 +18,6 @@ CREATE PROCEDURE sp_usuario_cambiapswd (
 */
 `sp_usuario_cambiapswd`:
 BEGIN
-    # declaración de variables
-    
     DECLARE EXIT HANDLER FOR SQLEXCEPTION BEGIN
         IF ISNULL(out_errormsg) THEN
             SELECT '¡ERROR AL MODIFICAR USUARIO!' INTO out_errormsg;
