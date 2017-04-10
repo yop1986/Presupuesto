@@ -24,16 +24,16 @@ CREATE PROCEDURE sp_movimiento_ingreso (
 BEGIN
     DECLARE w_tabla VARCHAR(30) DEFAULT 'movimientos';
 
-    # @w_causa_ingreso  --determina si la causa esta parametrizada como ingreso/egreso
-    # @w_cuenta_activo  --si la cuenta es activo/pasivo para el usuario
-    # @w_secuencial     --obtiene el utlimo secuencial para los movimientos
-
     DECLARE EXIT HANDLER FOR SQLEXCEPTION BEGIN
         IF ISNULL(out_errormsg) THEN
             SELECT 'ERROR EL INGRESAR EL MOVIMIENTO' INTO out_errormsg;
         END IF;
         ROLLBACK;
     END;
+
+    SET @w_causa_ingreso = 0,   # determina si la causa esta parametrizada como ingreso/egreso
+        @w_cuenta_activo = 0,   # si la cuenta es activo/pasivo para el usuario
+        @w_secuencial = 0;      # obtiene el utlimo secuencial para los movimientos
 
     IF (SELECT COUNT(id) FROM cuentas 
         WHERE id = in_cuenta AND usuario_id = in_usuario) = 0 THEN

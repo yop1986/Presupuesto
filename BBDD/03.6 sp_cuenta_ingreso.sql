@@ -30,8 +30,8 @@ BEGIN
 
     IF (SELECT 1 FROM cuentas WHERE usuario_id = in_usuario 
         AND nombre LIKE in_nombre) = 1 THEN
-            SELECT '¡NOMBRE YA REGISTRADO!' INTO out_errormsg;
-            LEAVE `sp_cuenta_ingreso`;
+        SELECT '¡NOMBRE YA REGISTRADO!' INTO out_errormsg;
+        LEAVE `sp_cuenta_ingreso`;
     END IF;
 
     IF (in_saldo < 0) THEN 
@@ -41,7 +41,7 @@ BEGIN
     
     INSERT INTO cuentas (nombre, tipo_id, moneda_id, saldo, descripcion, estado, usuario_id)
     VALUES (in_nombre, in_tipo, in_moneda, in_saldo, in_descripcion, in_estado, in_usuario);
-END
+END;
 
 #Ingreso de Cuentas
 CALL sp_cuenta_ingreso('Monetaria 9560', 1, 1, 0, 'Cuenta Principal', 1, 1, @mensaje);

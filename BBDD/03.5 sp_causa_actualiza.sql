@@ -51,7 +51,7 @@ BEGIN
                 SET nombre = in_nombre, ingreso = in_ingreso, causa_id = NULL 
                 WHERE id = in_id;
             ELSE
-                SELECT 'NO COINCIDEN LOS TIPOS DE CUENTA' INTO out_errormsg;
+                SELECT 'NO COINCIDEN LOS TIPOS DE CAUSAS ANIDADAS' INTO out_errormsg;
                 LEAVE `sp_causa_actualiza`;
             END IF;
         ELSE
@@ -67,7 +67,7 @@ BEGIN
                 SET nombre = in_nombre, ingreso = in_ingreso, causa_id = in_causa_padre 
                 WHERE id = in_id;
             ELSE
-                SELECT 'NO COINCIDEN LOS TIPOS DE CUENTA' INTO out_errormsg;
+                SELECT 'NO COINCIDEN LOS TIPOS DE CAUSAS ANIDADAS' INTO out_errormsg;
                 LEAVE `sp_causa_actualiza`;
             END IF;
         ELSE
@@ -76,7 +76,7 @@ BEGIN
                 SET nombre = in_nombre, ingreso = in_ingreso, causa_id = in_causa_padre 
                 WHERE id = in_id;
             ELSE
-                SELECT 'NO COINCIDEN LOS TIPOS DE CUENTA' INTO out_errormsg;
+                SELECT 'NO COINCIDEN LOS TIPOS DE CAUSAS ANIDADAS' INTO out_errormsg;
                 LEAVE `sp_causa_actualiza`;
             END IF;
         END IF;
