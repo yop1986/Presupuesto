@@ -42,7 +42,7 @@ CREATE TABLE beneficiarios(
 CREATE TABLE cl_tipo_ctas(
     id INT AUTO_INCREMENT,
     nombre VARCHAR(30) NOT NULL,
-    activo BIT NOT NULL DEFAULT 1, -- activo(+); pasivo(-)
+    activo TINYINT(1) NOT NULL DEFAULT 1, -- activo(+); pasivo(-)
 
     CONSTRAINT cl_tipo_ctas_pk_id PRIMARY KEY (id),
     CONSTRAINT cl_tipo_ctas_unq_nombre UNIQUE (nombre)
@@ -62,7 +62,7 @@ CREATE TABLE cl_monedas(
 CREATE TABLE cl_causas(
     id INT AUTO_INCREMENT,
     nombre VARCHAR(30) NOT NULL,
-    ingreso BIT NOT NULL DEFAULT 1, -- Ingreso (1), Egreso (0)
+    ingreso TINYINT(1) NOT NULL DEFAULT 1, -- Ingreso (1), Egreso (0)
     causa_id INT,
     usuario_id MEDIUMINT NOT NULL,
 
@@ -78,7 +78,7 @@ CREATE TABLE cuentas(
     moneda_id MEDIUMINT NOT NULL,
     saldo NUMERIC(15,2) NOT NULL DEFAULT 0,
     descripcion VARCHAR(255) DEFAULT NULL,
-    estado BIT NOT NULL DEFAULT 1, -- Activo (1); Inactivo (0)
+    estado TINYINT(1) NOT NULL DEFAULT 1, -- Activo (1); Inactivo (0)
     usuario_id MEDIUMINT NOT NULL,
 
     CONSTRAINT cuentas_pk_id PRIMARY KEY (id),
