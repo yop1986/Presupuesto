@@ -1,0 +1,67 @@
+msgid "Yes"
+msgstr "Si"
+
+msgid "Actions"
+msgstr "Acciones"
+
+msgid "Submit"
+msgstr "Enviar"
+
+msgid "Update"
+msgstr "Actualizar"
+
+    msgid "View"
+    msgstr "Ver"
+
+    msgid "Edit"
+    msgstr "Editar"
+
+    msgid "Delete"
+    msgstr "Eliminar"
+
+msgid "first"
+msgstr "primero"
+
+msgid "previous"
+msgstr "anterior"
+
+msgid "next"
+msgstr "siguiente"
+
+msgid "last"
+msgstr "último"
+
+    msgid "List Usuarios"
+    msgstr "Listar Usuarios"
+
+    msgid "New Usuario"
+    msgstr "Nuevo Usuario"
+
+    msgid "Edit Usuario"
+    msgstr "Editar   Usuario"
+
+    msgid "Delete Usuario"
+    msgstr "Eliminar Usuario"
+
+    msgid "The usuario has been saved."
+    msgstr "El usuario fue guardado."
+
+    msgid "The usuario could not be saved. Please, try again."
+    msgstr "El usuario no fue guardado. Por favor intente de nuevo."
+
+    msgid "The usuario has been deleted"
+    msgstr "El usuario fue eliminado."
+
+    msgid "The usuario could not be deleted. Please, try again."
+    msgstr "El usuario no fue eliminado. Intente de nuevo."
+
+
+
+
+msgid "Are you sure you want to delete # {0}?"
+msgstr "¿Esta seguro de eliminar el elemento # {0}?"
+
+msgid "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total"
+msgstr "Página {{page}} de {{pages}}, mostrando {{current}} registro(s) de {{count}}"
+
+
