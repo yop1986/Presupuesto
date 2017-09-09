@@ -8,11 +8,12 @@ create table usuarios (
     contrasena varchar(150) not null,
     creado datetime not null default current_timestamp,
     modificado datetime,
-    rol enum('Administrador', 'Usuario'),
+    rol enum('Administrador', 'Usuario') not null default 'Administrador',
 
     constraint usuario_pk_id primary key (id), 
     constraint usuario_unq_correo unique(correo)
 );
+#alter table usuarios modify column rol ENUM('Administrador', 'Usuario') not null DEFAULT 'Administrador'
 
 create table servicios (
     id tinyint unsigned not null auto_increment, 
