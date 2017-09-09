@@ -37,8 +37,11 @@ msgstr "último"
     msgid "New Usuario"
     msgstr "Nuevo Usuario"
 
+    msgid "Add Usuario"
+    msgstr "Agregar Usuario"
+
     msgid "Edit Usuario"
-    msgstr "Editar   Usuario"
+    msgstr "Editar Usuario"
 
     msgid "Delete Usuario"
     msgstr "Eliminar Usuario"
@@ -55,6 +58,86 @@ msgstr "último"
     msgid "The usuario could not be deleted. Please, try again."
     msgstr "El usuario no fue eliminado. Intente de nuevo."
 
+msgid "List Servicios"
+msgstr "Listar Servicios"
+
+msgid "New Servicio"
+msgstr "Nuevo Servicio"
+
+msgid "Add Servicio"
+msgstr "Agregar Servicio"
+
+msgid "Edit Servicio"
+msgstr "Editar Servicio"
+
+msgid "Delete Servicio"
+msgstr "Eliminar Servicio"
+
+msgid "The servicio has been saved."
+msgstr "El servicio fue guardado."
+
+msgid "The servicio could not be saved. Please, try again."
+msgstr "El servicio no fue guardado. Por favor intente de nuevo."
+
+msgid "The servicio has been deleted"
+msgstr "El servicio fue eliminado."
+
+msgid "The servicio could not be deleted. Please, try again."
+msgstr "El servicio no fue eliminado. Intente de nuevo."
+
+    msgid "List Instituciones"
+    msgstr "Listar Instituciones"
+
+    msgid "New Institucione"
+    msgstr "Nueva Institución"
+
+    msgid "Add Institucione"
+    msgstr "Agregar Institución"
+
+    msgid "Edit Institucione"
+    msgstr "Editar Institución"
+
+    msgid "Delete Institucione"
+    msgstr "Eliminar Institución"
+
+    msgid "The institucione has been saved."
+    msgstr "La institución fue guardada."
+
+    msgid "The institucione could not be saved. Please, try again."
+    msgstr "La institución no fue guardada. Por favor intente de nuevo."
+
+    msgid "The institucione has been deleted"
+    msgstr "La institución fue eliminada."
+
+    msgid "The institucione could not be deleted. Please, try again."
+    msgstr "La institución no fue eliminada. Intente de nuevo."
+
+msgid "List Tipo Cuentas"
+msgstr "Listar Tipos de Cuentas"
+
+msgid "New Tipo Cuenta"
+msgstr "Nuevo Tipo de Cuenta"
+
+msgid "Add Tipo Cuenta"
+msgstr "Agregar Tipo de Cuenta"
+
+msgid "Edit Tipo Cuenta"
+msgstr "Editar Tipo de Cuenta"
+
+msgid "Delete Tipo Cuenta"
+msgstr "Eliminar Tipo de Cuenta"
+
+msgid "The tipo cuenta has been saved."
+msgstr "El tipo de cuenta fue guardado."
+
+msgid "The tipo cuenta could not be saved. Please, try again."
+msgstr "El tipo de cuenta no fue guardado. Por favor intente de nuevo."
+
+msgid "The tipo cuenta has been deleted"
+msgstr "El tipo de cuenta fue eliminado."
+
+msgid "The tipo cuenta could not be deleted. Please, try again."
+msgstr "El tipo de cuenta no fue eliminado. Intente de nuevo."
 
 
 
