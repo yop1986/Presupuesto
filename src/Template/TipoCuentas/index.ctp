@@ -19,7 +19,7 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id', __('Id')) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nombre', __('Nombre')) ?></th>
-                <th scope="col"><?= $this->Paginator->sort('activo', __('Activo')) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('activo', __('Activo/Pasivo')) ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -28,7 +28,7 @@
             <tr>
                 <td><?= $this->Number->format($tipoCuenta->id) ?></td>
                 <td><?= h($tipoCuenta->nombre) ?></td>
-                <td><?= h($tipoCuenta->activo) ? __('Yes') : __('No') ?></td>
+                <td><?= h($tipoCuenta->activo) ? __('Activo') : __('Pasivo') ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $tipoCuenta->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $tipoCuenta->id], ['confirm' => __('Are you sure you want to delete # {0}?', $tipoCuenta->id)]) ?>
