@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 use Cake\I18n\Time;
 
 /**
@@ -13,6 +14,11 @@ use Cake\I18n\Time;
  */
 class UsuariosController extends AppController
 {
+
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+    }
 
     /**
      * Index method
@@ -114,5 +120,24 @@ class UsuariosController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function login()
+    {
+        if ($this->request->is('post')) {
+            $usuario = $this->Auth->identify();
+
+            if ($usuario) {
+                $this->Auth->setUser($usuario);
+                return $this->redirect($this->Auth->redirectUrl());
+            }
+
+            $this->Flash->error(__('Invalid username or password, try again'));
+        }
+    }
+
+    public function logout()
+    {
+        return $this->redirect($this->Auth->logout());
     }
 }

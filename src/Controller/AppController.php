@@ -28,6 +28,10 @@ use Cake\Event\Event;
 class AppController extends Controller
 {
 
+    public function beforeFilter(Event $event)
+    {
+        //$this->Auth->allow();
+    }
     /**
      * Initialization hook method.
      *
@@ -43,6 +47,28 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+        $this->loadComponent('Auth', [
+            'authenticate' => [
+                'Form' => [
+                    'userModel' => 'Usuarios',
+                    'fields' => ['username' => 'correo', 'password' => 'contrasena'],
+                    'finder' => 'auth'
+                ]
+            ],
+            'authError' => __('Did you really think you are allowed to see that?'),
+            'loginAction' => [
+                'controller' => 'Usuarios',
+                'action' => 'login'
+            ],
+            'loginRedirect' => [
+                'controller' => 'Usuarios',
+                'action' => 'index'
+            ],
+            'logoutRedirect' => [
+                'controller' => 'Usuarios',
+                'action' => 'login'
+            ]
+         ]);
 
         /*
          * Enable the following components for recommended CakePHP security settings.
