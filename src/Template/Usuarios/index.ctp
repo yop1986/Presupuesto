@@ -19,7 +19,6 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id', __('Id')) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nombre', __('Nombre')) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('creado', __('Creado')) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('rol', __('Rol')) ?></th>
@@ -29,7 +28,6 @@
         <tbody>
             <?php foreach ($usuarios as $usuario): ?>
             <tr>
-                <td><?= $this->Number->format($usuario->id) ?></td>
                 <td><?= h($usuario->nombre) ?></td>
                 <td><?= h($usuario->creado) ?></td>
                 <td><?= h($usuario->rol) ?></td>

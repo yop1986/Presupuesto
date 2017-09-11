@@ -17,7 +17,6 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id', __('Id')) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('codigo', __('Código')) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('descripcion', __('Descripción')) ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -26,7 +25,6 @@
         <tbody>
             <?php foreach ($monedas as $moneda): ?>
             <tr>
-                <td><?= $this->Number->format($moneda->id) ?></td>
                 <td><?= h($moneda->codigo) ?></td>
                 <td><?= h($moneda->descripcion) ?></td>
                 <td class="actions">

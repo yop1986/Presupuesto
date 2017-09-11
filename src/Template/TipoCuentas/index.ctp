@@ -17,7 +17,6 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id', __('Id')) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nombre', __('Nombre')) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('activo', __('Activo/Pasivo')) ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -26,7 +25,6 @@
         <tbody>
             <?php foreach ($tipoCuentas as $tipoCuenta): ?>
             <tr>
-                <td><?= $this->Number->format($tipoCuenta->id) ?></td>
                 <td><?= h($tipoCuenta->nombre) ?></td>
                 <td><?= h($tipoCuenta->activo) ? __('Activo') : __('Pasivo') ?></td>
                 <td class="actions">

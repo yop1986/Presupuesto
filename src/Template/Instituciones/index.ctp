@@ -15,7 +15,6 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id', __('Id')) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nombre', __('Nombre')) ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -23,7 +22,6 @@
         <tbody>
             <?php foreach ($instituciones as $institucion): ?>
             <tr>
-                <td><?= $this->Number->format($institucion->id) ?></td>
                 <td><?= $this->Html->link($institucion->nombre, $institucion->sitio, ['target' => '_blank']) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $institucion->id]) ?>

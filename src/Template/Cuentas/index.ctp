@@ -21,7 +21,6 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id', __('Id')) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nombre', __('Nombre')) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('saldo', __('Saldo')) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('estado', __('Estado')) ?></th>
@@ -33,7 +32,6 @@
         <tbody>
             <?php foreach ($cuentas as $cuenta): ?>
             <tr>
-                <td><?= $this->Number->format($cuenta->id) ?></td>
                 <td><?= h($cuenta->nombre) ?></td>
                 <td><?= $this->Number->currency($cuenta->saldo, $cuenta->moneda->codigo) ?></td>
                 <td><?= $cuenta->estado ? __('Activa') : __('Inactiva') ?></td>
