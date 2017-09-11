@@ -33,7 +33,7 @@ class TipoCuentasTable extends Table
         parent::initialize($config);
 
         $this->setTable('tipo_cuentas');
-        $this->setDisplayField('id');
+        $this->setDisplayField('nombre');
         $this->setPrimaryKey('id');
 
         $this->hasMany('Cuentas', [

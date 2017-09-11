@@ -31,7 +31,7 @@ class InstitucionesTable extends Table
         parent::initialize($config);
 
         $this->setTable('instituciones');
-        $this->setDisplayField('id');
+        $this->setDisplayField('nombre');
         $this->setPrimaryKey('id');
     }
 
