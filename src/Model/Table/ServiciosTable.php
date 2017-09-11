@@ -33,7 +33,7 @@ class ServiciosTable extends Table
         parent::initialize($config);
 
         $this->setTable('servicios');
-        $this->setDisplayField('id');
+        $this->setDisplayField('nombre');
         $this->setPrimaryKey('id');
 
         $this->belongsToMany('Usuarios', [
