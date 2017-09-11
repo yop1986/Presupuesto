@@ -52,21 +52,35 @@ create table tipo_cuentas (
     constraint tpcta_unq_nombre unique(nombre)
 );
 
+create table monedas (
+    id tinyint unsigned not null auto_increment,
+    codigo varchar(3) not null, 
+    descripcion varchar(30) not null, 
+
+    constraint monedas_pk_id primary key (id), 
+    constraint monedas_unq_codigo unique (codigo)
+);
+
 create table cuentas (
     id mediumint unsigned not null auto_increment,
     nombre varchar(60) not null,
     saldo decimal(15,2) not null default 0,
     estado boolean not null default true comment 'true: activo/false: inactivo',
+    moneda_id tinyint unsigned not null,
     tipo_cuenta_id tinyint unsigned not null,
     institucion_id tinyint unsigned not null,
     usuario_id smallint unsigned not null,
 
     constraint cuentas_pk_id primary key (id),
     constraint cuentas_unq_nombre unique (nombre),
+    constraint cuentas_fk_moneda foreign key (moneda_id) references monedas(id),
     constraint cuentas_fk_tpcuentas foreign key (tipo_cuenta_id) references tipo_cuentas(id),
     constraint cuentas_fk_institucion foreign key (institucion_id) references instituciones(id),
     constraint cuentas_fk_usuario foreign key (usuario_id) references usuarios(id)
 );
+#alter table cuentas add column moneda_id tinyint unsigned not null after nombre;
+#alter table cuentas add constraint cuentas_fk_moneda foreign key (moneda_id) references monedas(id);
+
 
 ### por revisar
 
