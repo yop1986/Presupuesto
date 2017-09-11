@@ -24,7 +24,7 @@ create table servicios (
     constraint servicios_pk_id primary key (id)
 );
 
-create table servicios_usuarios (
+create table servicio_usuarios (
     id mediumint unsigned not null auto_increment,
     descripcion varchar(60) not null, 
     servicio_id tinyint unsigned not null, 
