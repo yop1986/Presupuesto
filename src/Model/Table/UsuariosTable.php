@@ -34,7 +34,7 @@ class UsuariosTable extends Table
         parent::initialize($config);
 
         $this->setTable('usuarios');
-        $this->setDisplayField('id');
+        $this->setDisplayField('nombre');
         $this->setPrimaryKey('id');
 
         $this->hasMany('Cuentas', [
@@ -82,6 +82,11 @@ class UsuariosTable extends Table
         $validator
             ->dateTime('modificado')
             ->allowEmpty('modificado');
+
+        $validator
+            ->boolean('activo')
+            ->requirePresence('activo', 'create')
+            ->notEmpty('activo');
 
         $validator
             ->scalar('rol')

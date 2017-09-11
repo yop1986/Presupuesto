@@ -13,6 +13,7 @@ use Cake\ORM\Entity;
  * @property string $contrasena
  * @property \Cake\I18n\FrozenTime $creado
  * @property \Cake\I18n\FrozenTime $modificado
+ * @property bool $activo
  * @property string $rol
  *
  * @property \App\Model\Entity\Cuenta[] $cuentas
