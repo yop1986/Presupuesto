@@ -8,15 +8,15 @@
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Form->postLink(
                 __('Delete'),
-                ['action' => 'delete', $institucione->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $institucione->id)]
+                ['action' => 'delete', $institucion->id],
+                ['confirm' => __('Are you sure you want to delete # {0}?', $institucion->id)]
             )
         ?></li>
         <li><?= $this->Html->link(__('List Instituciones'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
 <div class="instituciones form large-9 medium-8 columns content">
-    <?= $this->Form->create($institucione) ?>
+    <?= $this->Form->create($institucion) ?>
     <fieldset>
         <legend><?= __('Edit Institucione') ?></legend>
         <?php

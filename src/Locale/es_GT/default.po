@@ -88,28 +88,28 @@ msgstr "El servicio no fue eliminado. Intente de nuevo."
     msgid "List Instituciones"
     msgstr "Listar Instituciones"
 
-    msgid "New Institucione"
+    msgid "New Institucion"
     msgstr "Nueva Institución"
 
-    msgid "Add Institucione"
+    msgid "Add Institucion"
     msgstr "Agregar Institución"
 
-    msgid "Edit Institucione"
+    msgid "Edit Institucion"
     msgstr "Editar Institución"
 
-    msgid "Delete Institucione"
+    msgid "Delete Institucion"
     msgstr "Eliminar Institución"
 
-    msgid "The institucione has been saved."
+    msgid "The institucion has been saved."
     msgstr "La institución fue guardada."
 
-    msgid "The institucione could not be saved. Please, try again."
+    msgid "The institucion could not be saved. Please, try again."
     msgstr "La institución no fue guardada. Por favor intente de nuevo."
 
-    msgid "The institucione has been deleted"
+    msgid "The institucion has been deleted"
     msgstr "La institución fue eliminada."
 
-    msgid "The institucione could not be deleted. Please, try again."
+    msgid "The institucion could not be deleted. Please, try again."
     msgstr "La institución no fue eliminada. Intente de nuevo."
 
 msgid "List Tipo Cuentas"

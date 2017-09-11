@@ -33,18 +33,18 @@ class InstitucionesController extends AppController
      */
     public function add()
     {
-        $institucione = $this->Instituciones->newEntity();
+        $institucion = $this->Instituciones->newEntity();
         if ($this->request->is('post')) {
-            $institucione = $this->Instituciones->patchEntity($institucione, $this->request->getData());
-            if ($this->Instituciones->save($institucione)) {
-                $this->Flash->success(__('The institucione has been saved.'));
+            $institucion = $this->Instituciones->patchEntity($institucion, $this->request->getData());
+            if ($this->Instituciones->save($institucion)) {
+                $this->Flash->success(__('The institucion has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The institucione could not be saved. Please, try again.'));
+            $this->Flash->error(__('The institucion could not be saved. Please, try again.'));
         }
-        $this->set(compact('institucione'));
-        $this->set('_serialize', ['institucione']);
+        $this->set(compact('institucion'));
+        $this->set('_serialize', ['institucion']);
     }
 
     /**
@@ -56,20 +56,20 @@ class InstitucionesController extends AppController
      */
     public function edit($id = null)
     {
-        $institucione = $this->Instituciones->get($id, [
+        $institucion = $this->Instituciones->get($id, [
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $institucione = $this->Instituciones->patchEntity($institucione, $this->request->getData());
-            if ($this->Instituciones->save($institucione)) {
-                $this->Flash->success(__('The institucione has been saved.'));
+            $institucion = $this->Instituciones->patchEntity($institucion, $this->request->getData());
+            if ($this->Instituciones->save($institucion)) {
+                $this->Flash->success(__('The institucion has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The institucione could not be saved. Please, try again.'));
+            $this->Flash->error(__('The institucion could not be saved. Please, try again.'));
         }
-        $this->set(compact('institucione'));
-        $this->set('_serialize', ['institucione']);
+        $this->set(compact('institucion'));
+        $this->set('_serialize', ['institucion']);
     }
 
     /**
@@ -82,11 +82,11 @@ class InstitucionesController extends AppController
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
-        $institucione = $this->Instituciones->get($id);
-        if ($this->Instituciones->delete($institucione)) {
-            $this->Flash->success(__('The institucione has been deleted.'));
+        $institucion = $this->Instituciones->get($id);
+        if ($this->Instituciones->delete($institucion)) {
+            $this->Flash->success(__('The institucion has been deleted.'));
         } else {
-            $this->Flash->error(__('The institucione could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The institucion could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);

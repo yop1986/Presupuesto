@@ -10,9 +10,9 @@
     </ul>
 </nav>
 <div class="instituciones form large-9 medium-8 columns content">
-    <?= $this->Form->create($institucione) ?>
+    <?= $this->Form->create($institucion) ?>
     <fieldset>
-        <legend><?= __('Add Institucione') ?></legend>
+        <legend><?= __('Add Institucion') ?></legend>
         <?php
             echo $this->Form->control('nombre');
             echo $this->Form->control('sitio');
