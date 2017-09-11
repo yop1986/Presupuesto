@@ -21,7 +21,7 @@ class CuentasController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['TipoCuentas', 'Instituciones', 'Usuarios']
+            'contain' => ['Monedas', 'TipoCuentas', 'Instituciones', 'Usuarios']
         ];
         $cuentas = $this->paginate(
             $this->Cuentas->find('all')->where(['Cuentas.usuario_id' => $this->Auth->User('id')])
@@ -66,10 +66,11 @@ class CuentasController extends AppController
             }
             $this->Flash->error(__('The cuenta could not be saved. Please, try again.'));
         }
+        $monedas = $this->Cuentas->Monedas->find('list', ['limit' => 200]);
         $tipoCuentas = $this->Cuentas->TipoCuentas->find('list', ['limit' => 200]);
         $instituciones = $this->Cuentas->Instituciones->find('list', ['limit' => 200]);
         $usuarios = $this->Cuentas->Usuarios->find('list', ['limit' => 200]);
-        $this->set(compact('cuenta', 'tipoCuentas', 'instituciones', 'usuarios'));
+        $this->set(compact('cuenta', 'monedas', 'tipoCuentas', 'instituciones', 'usuarios'));
         $this->set('_serialize', ['cuenta']);
     }
 

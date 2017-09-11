@@ -21,6 +21,7 @@
         <legend><?= __('Add Cuenta') ?></legend>
         <?php
             echo $this->Form->control('nombre', ['label' => __('Nombre')]);
+            echo $this->Form->control('moneda_id', ['label' => __('Moneda')]);
             echo $this->Form->control('saldo', ['label' => __('Saldo')]);
             echo $this->Form->control('estado', ['label' => __('Activa')]);
             echo $this->Form->control('tipo_cuenta_id', ['label' => __('Tipo de Cuenta'), 'options' => $tipoCuentas]);

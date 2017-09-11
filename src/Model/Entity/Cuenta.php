@@ -10,10 +10,12 @@ use Cake\ORM\Entity;
  * @property string $nombre
  * @property float $saldo
  * @property bool $estado
+ * @property int $moneda_id
  * @property int $tipo_cuenta_id
  * @property int $institucion_id
  * @property int $usuario_id
  *
+ * @property \App\Model\Entity\Moneda $moneda
  * @property \App\Model\Entity\TipoCuenta $tipo_cuenta
  * @property \App\Model\Entity\Institucion $institucion
  * @property \App\Model\Entity\Usuario $usuario

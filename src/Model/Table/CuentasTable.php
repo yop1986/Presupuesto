@@ -9,6 +9,7 @@ use Cake\Validation\Validator;
 /**
  * Cuentas Model
  *
+ * @property \App\Model\Table\MonedasTable|\Cake\ORM\Association\BelongsTo $Monedas
  * @property \App\Model\Table\TipoCuentasTable|\Cake\ORM\Association\BelongsTo $TipoCuentas
  * @property \App\Model\Table\InstitucionesTable|\Cake\ORM\Association\BelongsTo $Instituciones
  * @property \App\Model\Table\UsuariosTable|\Cake\ORM\Association\BelongsTo $Usuarios
@@ -38,6 +39,10 @@ class CuentasTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
+        $this->belongsTo('Monedas', [
+            'foreignKey' => 'moneda_id',
+            'joinType' => 'INNER'
+        ]);
         $this->belongsTo('TipoCuentas', [
             'foreignKey' => 'tipo_cuenta_id',
             'joinType' => 'INNER'
@@ -93,6 +98,7 @@ class CuentasTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->isUnique(['nombre']));
+        $rules->add($rules->existsIn(['moneda_id'], 'Monedas'));
         $rules->add($rules->existsIn(['tipo_cuenta_id'], 'TipoCuentas'));
         $rules->add($rules->existsIn(['institucion_id'], 'Instituciones'));
         $rules->add($rules->existsIn(['usuario_id'], 'Usuarios'));

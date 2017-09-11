@@ -35,7 +35,7 @@
             <tr>
                 <td><?= $this->Number->format($cuenta->id) ?></td>
                 <td><?= h($cuenta->nombre) ?></td>
-                <td><?= $this->Number->currency($cuenta->saldo, 'GTQ') ?></td>
+                <td><?= $this->Number->currency($cuenta->saldo, $cuenta->moneda->codigo) ?></td>
                 <td><?= $cuenta->estado ? __('Activa') : __('Inactiva') ?></td>
                 <td><?= $cuenta->tipo_cuenta->nombre ?></td>
                 <td><?= $cuenta->institucion->nombre ?></td>
